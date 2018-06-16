@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "754279e0-bc46-4b3a-9c18-d173c72cac89",
+		"name": "Carla",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://omdbapi.com?t=Matrix&apikey=1169234e",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://omdbapi.com?t=Matrix&apikey=1169234e",
+					"protocol": "http",
+					"host": [
+						"omdbapi",
+						"com"
+					],
+					"query": [
+						{
+							"key": "t",
+							"value": "Matrix"
+						},
+						{
+							"key": "apikey",
+							"value": "1169234e"
+						}
+					]
+				},
+				"description": "Matrix"
+			},
+			"response": []
+		},
+		{
+			"name": "http://omdbapi.com?t=Batman&apikey=1169234e",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://omdbapi.com?t=Batman&apikey=1169234e",
+					"protocol": "http",
+					"host": [
+						"omdbapi",
+						"com"
+					],
+					"query": [
+						{
+							"key": "t",
+							"value": "Batman"
+						},
+						{
+							"key": "apikey",
+							"value": "1169234e"
+						}
+					]
+				},
+				"description": "Batman"
+			},
+			"response": []
+		},
+		{
+			"name": "http://omdbapi.com?t=Jurassic Park&apikey=1169234e",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a87ed22-8fdf-4fed-996f-57a0f4b0f3cf",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Steven Spielberg\");",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"JSON Body Check\", function () {",
+							"    var jsonData = JSON.parse(responseBody);",
+							"    tests[\"Verify if Title{} is Jurassic Park\"] = jsonData.Title === \"Jurassic Park\";",
+							"    tests[\"Verify if Year{} is 1993\"] = jsonData.Year === \"1993\";",
+							"    tests[\"Verify if Released{} is 11 Jun 1993\"] = jsonData.Released === \"11 Jun 1993\";",
+							"    tests[\"Verify if Runtime{} is 127 min\"] = jsonData.Runtime === \"127 min\";",
+							"    tests[\"Verify if Director{} is Steven Spielberg\"] = jsonData.Director === \"Steven Spielberg\";",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://omdbapi.com?t=Jurassic Park&apikey=1169234e",
+					"protocol": "http",
+					"host": [
+						"omdbapi",
+						"com"
+					],
+					"query": [
+						{
+							"key": "t",
+							"value": "Jurassic Park"
+						},
+						{
+							"key": "apikey",
+							"value": "1169234e"
+						}
+					]
+				},
+				"description": "Jurassic Park"
+			},
+			"response": []
+		},
+		{
+			"name": "http://omdbapi.com?t=The Walking Dead&apikey=1169234e",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bb1fe220-33b3-47f9-894c-8b6cb696bc9a",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Horror\");",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"JSON Body Check\", function () {",
+							"    var jsonData = JSON.parse(responseBody);",
+							"    tests[\"Verify if Title{} is The Walking Dead\"] = jsonData.Title === \"The Walking Dead\";",
+							"    tests[\"Verify if Year{} is 2010–\"] = jsonData.Year === \"2010–\";",
+							"    tests[\"Verify if Country{} is USA\"] = jsonData.Country === \"USA\";",
+							"    tests[\"Verify if Runtime{} is 44 min\"] = jsonData.Runtime === \"44 min\";",
+							"    tests[\"Verify if Language{} is English\"] = jsonData.Language === \"English\";",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://omdbapi.com?t=The Walking Dead&apikey=1169234e",
+					"protocol": "http",
+					"host": [
+						"omdbapi",
+						"com"
+					],
+					"query": [
+						{
+							"key": "t",
+							"value": "The Walking Dead"
+						},
+						{
+							"key": "apikey",
+							"value": "1169234e"
+						}
+					]
+				},
+				"description": "The Walking Dead"
+			},
+			"response": []
+		}
+	]
+}
